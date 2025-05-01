@@ -170,7 +170,7 @@
         }
 
         .main-container .row .col-lg-8 {
-            background-color: #1a1a2e;
+            background-color: #121212;
             padding: 20px;
             border-radius: 10px;
             font-family: 'Segoe UI', sans-serif;
@@ -444,7 +444,7 @@
 
         /* CSS: Style cho phần bình luận */
         .comments-container {
-        max-width: 700px;
+        max-width: 840px;
         margin: 40px auto;
         padding: 20px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -455,8 +455,10 @@
         }
 
         .login-prompt {
-        text-align: center;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        
         }
 
         .login-prompt span {
@@ -590,6 +592,42 @@
         border-top: 1px dashed #444;
         }
 
+         /* Phần phân trang bình luận*/
+         .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pagination .prev-btn {
+            background-color: #2a2a2a;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        .pagination .next-btn {
+            background-color: #8a4af3;
+            color: #fff;
+        }
+
+        .pagination .next-btn:hover {
+            background-color: #a060ff;
+        }
+
 
 
         /* CSS: Style cho phần truyện liên quan */
@@ -707,53 +745,54 @@
             }
         }
 
-/* Ensure max 5 items per row on larger screens */
-@media (min-width: 1000px) {
-    .related-comics-list {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
+        /* Ensure max 5 items per row on larger screens */
+        @media (min-width: 1000px) {
+            .related-comics-list {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .related-comics-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-}
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .related-comics-list {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
 
-@media (max-width: 480px) {
-    .related-comics-list {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
+        @media (max-width: 480px) {
+            .related-comics-list {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
 
-    .related-comic-item img {
-        height: 150px;
-    }
+            .related-comic-item img {
+                height: 150px;
+            }
 
-    .related-comic-item a {
-        font-size: 14px;
-    }
+            .related-comic-item a {
+                font-size: 14px;
+            }
 
-    .related-comic-item .chapter,
-    .related-comic-item .rating span {
-        font-size: 12px;
-    }
-}
+            .related-comic-item .chapter,
+            .related-comic-item .rating span {
+                font-size: 12px;
+            }
+        }
 
         /* CSS: Style cho phần truyện phổ biến (sidebar) */
         .popular-section {
-            background: linear-gradient(to bottom, #2c1e3d, #483d8b); /* Gradient nền từ tím đậm đến tím nhạt */
+            background: #1a1a1a; /* Gradient nền từ tím đậm đến tím nhạt */
             padding: 20px; /* Khoảng cách bên trong */
-            border: 2px solid #483d8b; /* Viền tím */
+            border: 2px solid #424243; /* Viền tím */
             border-radius: 10px; /* Bo góc */
-            height: 100%; /* Chiều cao full */
+            height: 1220px; /* Chiều cao full */
             overflow-y: auto; /* Kích hoạt cuộn dọc nếu nội dung dài */
         }
 
         /* CSS: Container bên trong popular-section */
         .popular-section .container {
-            background-color: rgb(54, 37, 113); /* Màu nền tím đậm */
+            background-color: #2b2929; /* Màu nền tím đậm */
             padding: 20px; /* Khoảng cách bên trong */
+            border-radius: 10px;
         }
 
         /* CSS: Style cho các tab (Weekly, Monthly, All) */
@@ -1102,8 +1141,8 @@
                     <!-- HTML: Phần bình luận -->
                     <div class="comments-container">
                         <div class="login-prompt">
-                            <span>Log in to join the conversation</span>
-                            <a href="#">Log in</a>
+                            <span>Comments</span>
+                            <span>Log in to join the conversation <a href="#">Log in</a></span>
                         </div>
                     
                         <div class="comment-input">
@@ -1188,6 +1227,14 @@
                                 </ul>
                             </li>
                         </ul>
+                        <div class="pagination">
+                            <button class="prev-btn" disabled>
+                                <i class="fas fa-chevron-left"></i> Previous
+                            </button>
+                            <button class="next-btn">
+                                Next <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
                     
@@ -1195,6 +1242,7 @@
                     <!-- HTML: Phần truyện liên quan -->
                     <div class="related-comics-section">
                         <h2>Related Series</h2>
+                        <hr>
                         <div class="related-comics-list">
                             <div class="related-comic-item">
                                 <img src="https://gg.asuracomic.net/storage/media/243337/conversions/01J9AHYZQ90WM6831SZ98MGN55-thumb-small.webp" alt="Solo Max-Level Newbie">
