@@ -20,8 +20,8 @@
             overflow-y: auto;
         }
 
-        /* Header Section */
-        header {
+       /* Header Section */
+       header {
             width: 100%;
             background: linear-gradient(to bottom, #4b0082, #2c1e3d);
             padding: 10px 0;
@@ -56,6 +56,11 @@
             padding: 0 20px;
         }
 
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
         .navbar-brand img {
             height: 35px;
             border-radius: 50%;
@@ -69,6 +74,7 @@
         .navbar-nav {
             display: flex;
             align-items: center;
+            margin-left: 20px;
         }
 
         .navbar-nav .nav-link {
@@ -82,15 +88,19 @@
             color: #ff8c00;
         }
 
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
         .search-bar {
             display: flex;
             align-items: center;
-            flex-grow: 1;
-            justify-content: center;
+            margin-right: 15px;
         }
 
         .search-bar input {
-            width: 50%;
+            width: 200px;
             background-color: #1a1a1a;
             border: 1px solid #483d8b;
             color: #fff;
@@ -838,17 +848,24 @@
     <header>
         <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="https://asuracomic.net/images/logo.webp" alt="Logo"></a>
-                <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Bookmark</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Comics</a></li>
-                </ul>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search">
-                    <button><i class="fas fa-search"></i></button>
+                <div class="navbar-left">
+                    <a class="navbar-brand" href="#"><img src="https://asuracomic.net/images/logo.webp" alt="Logo"></a>
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Bookmark</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Comics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+                        
+                    </ul>
                 </div>
-                <button class="btn btn-login">Login</button>
+                <div class="navbar-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="btn btn-login">Login</button>
+                </div>
             </div>
         </nav>
     </header>
